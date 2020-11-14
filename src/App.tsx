@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import Unsplash from 'unsplash-js';
 
 // TODO: Replace "APP_ACCESS_KEY" with your own key, which
@@ -6,11 +6,7 @@ import React from 'react';
 // const unsplash = new Unsplash({ accessKey: 'APP_ACCESS_KEY' });
 
 function App() {
-  return (
-    <div className="App">
-      hello
-    </div>
-  );
+  return <div className="App">hello</div>;
 }
 
 export default App;
