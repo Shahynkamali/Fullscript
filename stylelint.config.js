@@ -1,5 +1,8 @@
 module.exports = {
     extends: ["stylelint-config-standard"],
+    ignoreFiles: [
+        "src/assets/main.css"
+    ],
     rules: {
         "at-rule-no-unknown": [
             true,
@@ -16,7 +19,6 @@ module.exports = {
         "declaration-block-trailing-semicolon": null,
         "no-descending-specificity": null,
         "declaration-block-no-duplicate-properties": null,
-        "color-hex-lenght": null,
         "declaration-empty-line-before": null,
     },
 };
