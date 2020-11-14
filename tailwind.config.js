@@ -5,6 +5,9 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
+  experimental: {
+    applyComplexClasses: true,
+  },
   purge: [
     'src/**/*.js',
     'src/**/*.jsx',
