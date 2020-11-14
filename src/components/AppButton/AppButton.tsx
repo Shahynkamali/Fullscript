@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
   type?: Types;
   buttonStyle?: Styles;
-  onClick?: any;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 type Types = "button" | "submit" | "reset" | undefined;

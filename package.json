@@ -69,7 +69,9 @@
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "react/button-has-type": "off",
+      "import/no-cycle": "off",
       "react/prop-types": "off",
+      "react/no-danger": "off",
       "prettier/prettier": [
         "error",
         {
