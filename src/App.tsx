@@ -5,8 +5,6 @@ import React from "react";
 // can be generated here: https://unsplash.com/developers
 // const unsplash = new Unsplash({ accessKey: 'APP_ACCESS_KEY' });
 
-function App() {
-  return <div className="App">hello</div>;
+export default function App() {
+  return <div>hello</div>;
 }
-
-export default App;
