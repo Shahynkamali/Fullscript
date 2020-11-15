@@ -4,6 +4,7 @@ interface Props {
   children: React.ReactNode;
   type?: Types;
   buttonStyle?: Styles;
+  value: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -16,10 +17,12 @@ const AppButton: React.FC<Props> = ({
   type = "button",
   buttonStyle = "primary",
   onClick,
+  value,
 }) => {
   return (
     <span className="inline-flex rounded-md shadow-sm">
       <button
+        value={value}
         onClick={onClick}
         type={type}
         className={`app-button app-button--${buttonStyle}`}
