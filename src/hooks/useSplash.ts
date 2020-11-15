@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import Unsplash, { toJson } from "unsplash-js";
 
 interface State {
-  data: unknown;
+  data: Results | null;
   loading: boolean;
+}
+
+export interface Results {
+  results: [];
+  total: number;
+  total__pages: number;
 }
 
 const API_KEY = process.env.REACT_APP_API_KEY as string;

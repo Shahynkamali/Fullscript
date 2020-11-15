@@ -1,50 +1,34 @@
 import React from "react";
-// import AppButton from "./components/AppButton";
-// import AppInput from "./components/AppInput";
-import AppWrapper from "./components/AppWrapper";
 import useSplash from "./hooks/useSplash";
+import AppInput from "./components/AppInput";
+import AppImage from "./components/AppImage";
+import AppWrapper from "./components/AppWrapper";
+import { useInput } from "./hooks/useInput";
 
-// import { useInput } from "./hooks/useInput";
-
-// TODO: Replace "APP_ACCESS_KEY" with your own key, which
-// can be generated here: https://unsplash.com/developers
+interface State {
+  collection: string;
+}
 
 const App: React.FC = () => {
-  const { data, loading } = useSplash("dogs");
-  console.log(data);
-
-  // interface Form {
-  //   email: string;
-  // }
-
   // const [counter, setCounter] = useState(0);
-  // const { values, handleChange } = useInput<Form>({ email: "" });
+  const { values, handleChange } = useInput<State>({ collection: "" });
+  const { data, loading } = useSplash("dogs");
+
   // const { email } = values;
-  const foo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div>
-      <AppWrapper column={6}>
-        {foo.map((number: number) => (
-          <div key={number} className="w-full h-full bg-red-500">
-            {number}
+    <AppWrapper column={4}>
+      {data &&
+        data.results.map((image: any) => (
+          <div key={image.id} className="w-full h-full object-cover">
+            <AppImage
+              src={image.cover_photo.urls.regular}
+              alt={image.cover_photo.alt_description}
+            />
           </div>
         ))}
-      </AppWrapper>
-      {/* <AppButton
-        onClick={() => setCounter((prevCount: number) => prevCount + 1)}
-      >
-        hsad
-      </AppButton> */}
-      {/* <p>{counter}</p> */}
-      {/* <AppInput
-        value={email}
-        placeholder="email"
-        id="email"
-        name="email"
-        onChange={handleChange}
-      /> */}
-    </div>
+      {loading && <p>Loading...</p>}
+    </AppWrapper>
   );
 };
 
