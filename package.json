@@ -71,7 +71,7 @@
       "react/button-has-type": "off",
       "import/no-cycle": "off",
       "react/prop-types": "off",
-      "react/no-danger": "off",
+      "consistent-return": "off",
       "prettier/prettier": [
         "error",
         {
