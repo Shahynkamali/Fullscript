@@ -97,3 +97,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Development  Decisions:
+Used TypesScript for advanced type checking and readablity.
+Used Functional Components, implementing React Hooks to seperate logic from components.
+Used Tailwind CSS for rapid UI development.
+Used Prettier and Eslint with AirB&B rules for a consistent codebase.
+
