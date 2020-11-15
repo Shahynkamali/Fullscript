@@ -25,9 +25,9 @@ const AppImage: React.FC<Props> = ({ src, alt }) => {
   }, [isLoading, placeholderRef]);
 
   return isLoading ? (
-    <div className="app-image">
+    <div className=" h-40 flex-grow">
       <img
-        className="app-image__image app-image__image--loaded"
+        className="h-full min-w-full object-cover align-bottom"
         src={src}
         alt={alt}
       />

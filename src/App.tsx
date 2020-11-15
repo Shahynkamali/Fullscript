@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useSplash from "./hooks/useSplash";
 import AppInput from "./components/AppInput";
 import AppImage from "./components/AppImage";
@@ -20,7 +20,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-7xl w-full my-0 mx-auto px-4">
       <div className="flex w-full justify-center">
         <div className="m-2">
           <AppInput
@@ -40,9 +40,10 @@ const App: React.FC = () => {
           </AppButton>
         </div>
       </div>
+      {data && data.errors && <p>{data.errors}</p>}
       <AppWrapper column={4}>
-        {data &&
-          data.results.length &&
+        {!data?.errors &&
+          data?.results &&
           data.results.map((image: any) => (
             <div key={image.id}>
               <AppImage
@@ -59,7 +60,7 @@ const App: React.FC = () => {
               />
             </div>
           ))}
-        {data && !data.results.length && <p>No results found!</p>}
+        {data && !data.results && <p>No results found!</p>}
         {loading && <p>Loading...</p>}
       </AppWrapper>
     </div>

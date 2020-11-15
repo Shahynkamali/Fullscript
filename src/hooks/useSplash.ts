@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Unsplash, { toJson } from "unsplash-js";
 import Response from "../../node_modules/@types/unsplash-js";
 
-type UnSplashResponse = Response & { results: [] };
+type UnSplashResponse = Response & { results: []; errors: [] };
 
 interface State {
   data: UnSplashResponse | null;
