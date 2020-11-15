@@ -8,18 +8,14 @@ interface Props {
 }
 
 const defineColumns = (column: number, gap: number): string => {
-  const smallGap = Math.round(gap - 1);
-  const largeGap = Math.round(gap + 1);
   return isIE
     ? "app-wrappper--IE"
     : `
         grid gap-3 sm:grid-cols-${Math.round(column).toString()}
         xl:grid-cols-${Math.round(column + 1).toString()}
         gap-${gap.toString()}
-        sm:gap-${smallGap.toString()}
-        md:gap-${gap.toString()}
-        lg:gap-${largeGap.toString()}
-        xl:gap-${largeGap.toString()}
+        sm:gap-${Math.round(gap - 1).toString()}
+        xl:gap-${Math.round(gap + 1).toString()}
     `.replace(/ /g, " ");
 };
 

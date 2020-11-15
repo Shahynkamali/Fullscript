@@ -12,7 +12,7 @@ interface State {
 
 const App: React.FC = () => {
   const { values, handleChange } = useInput<State>({ collection: "" });
-  const [searchBy, setSearchBy] = useState("dog");
+  const [searchBy, setSearchBy] = useState("puppy");
   const { collection } = values;
   const { data, loading } = useSplash(searchBy);
   const handleClick = (query: string): void => {
@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
   return (
     <div className="max-w-7xl w-full my-0 mx-auto px-4">
-      <div className="flex w-full justify-center">
+      <form className="flex w-full justify-center">
         <div className="m-2">
           <AppInput
             name="collection"
@@ -33,13 +33,16 @@ const App: React.FC = () => {
         <div className="m-2">
           <AppButton
             value={searchBy}
-            type="button"
-            onClick={() => handleClick(collection)}
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              handleClick(collection);
+            }}
           >
             Search
           </AppButton>
         </div>
-      </div>
+      </form>
       {data && data.errors && <p>{data.errors}</p>}
       <AppWrapper column={4}>
         {!data?.errors &&

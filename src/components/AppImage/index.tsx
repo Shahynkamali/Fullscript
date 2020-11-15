@@ -13,9 +13,7 @@ const AppImage: React.FC<Props> = ({ src, alt }) => {
     if (!isLoading && placeholderRef.current) {
       const observer = new IntersectionObserver(
         ([{ intersectionRatio }]): void => {
-          if (intersectionRatio > 0) {
-            setIsLoading(true);
-          }
+          if (intersectionRatio > 0) setIsLoading(true);
         }
       );
 
@@ -25,9 +23,9 @@ const AppImage: React.FC<Props> = ({ src, alt }) => {
   }, [isLoading, placeholderRef]);
 
   return isLoading ? (
-    <div className=" h-40 flex-grow">
+    <div className="app-image h-40 flex-grow">
       <img
-        className="h-full min-w-full object-cover align-bottom"
+        className="app-image__image h-full min-w-full object-cover align-bottom"
         src={src}
         alt={alt}
       />
