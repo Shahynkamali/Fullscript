@@ -2,14 +2,17 @@ import React from "react";
 // import AppButton from "./components/AppButton";
 // import AppInput from "./components/AppInput";
 import AppWrapper from "./components/AppWrapper";
+import useSplash from "./hooks/useSplash";
+
 // import { useInput } from "./hooks/useInput";
-// import Unsplash from 'unsplash-js';
 
 // TODO: Replace "APP_ACCESS_KEY" with your own key, which
 // can be generated here: https://unsplash.com/developers
-// const unsplash = new Unsplash({ accessKey: 'APP_ACCESS_KEY' });
 
 const App: React.FC = () => {
+  const { data, loading } = useSplash("dogs");
+  console.log(data);
+
   // interface Form {
   //   email: string;
   // }
